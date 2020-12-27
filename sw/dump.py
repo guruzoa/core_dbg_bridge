@@ -26,7 +26,7 @@ def main(argv):
     
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', dest='type',    default='uart',                     help='Device type (uart|socket)')
-    parser.add_argument('-d', dest='device',  default='/dev/ttyUSB1',             help='Serial Device')
+    parser.add_argument('-d', dest='device',  default='/dev/ttyUSB0',             help='Serial Device')
     parser.add_argument('-b', dest='baud',    default=1000000,       type=int,    help='Baud rate')
     parser.add_argument('-o', dest='filename',required=True,                      help='Output filename')
     parser.add_argument('-a', dest='address', default="0",                        help='Address to dump from (default to 0x0)')
@@ -37,7 +37,7 @@ def main(argv):
     bus_if.set_progress_cb(print_progress)
 
     addr   = int(args.address, 0)
-    print "Dump: %d bytes from 0x%08x" % (args.size, addr)
+    print("Dump: %d bytes from 0x%08x" % (args.size, addr))
 
     # Read from target
     data   = bus_if.read(addr, args.size)

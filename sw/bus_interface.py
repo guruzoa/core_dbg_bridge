@@ -10,7 +10,7 @@ class BusInterface:
     ##################################################################
     # Construction
     ##################################################################
-    def __init__(self, iface_type = 'uart', iface = '/dev/ttyUSB1', baud = 115200):
+    def __init__(self, iface_type = 'uart', iface = '/dev/ttyUSB0', baud = 115200):
         if iface_type == "uart":
             self.bus = UartBusInterface(iface, baud)
         elif iface_type == "socket":

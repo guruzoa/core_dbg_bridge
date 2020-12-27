@@ -11,7 +11,7 @@ def main(argv):
     
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', dest='type',   default='uart',                  help='Device type (uart|socket)')
-    parser.add_argument('-d', dest='device', default='/dev/ttyUSB1',          help='Serial Device')
+    parser.add_argument('-d', dest='device', default='/dev/ttyUSB0',          help='Serial Device')
     parser.add_argument('-b', dest='baud',   default=1000000,       type=int, help='Baud rate')
     parser.add_argument('-a', dest='address',required=True,                   help='Address to write')
     parser.add_argument('-v', dest='value',  required=True,                   help='Value to write')

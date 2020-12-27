@@ -7,7 +7,7 @@ class UartBusInterface:
     ##################################################################
     # Construction
     ##################################################################
-    def __init__(self, iface = '/dev/ttyUSB1', baud = 115200):
+    def __init__(self, iface = '/dev/ttyUSB0', baud = 115200):
         self.interface  = iface
         self.baud       = baud
         self.uart       = None
@@ -37,11 +37,14 @@ class UartBusInterface:
             bytesize=serial.EIGHTBITS
         )
         self.uart.isOpen()
+        print('connect start...')
 
         # Check status register
         value = self.read32(self.STS_ADDR)
+        print('check magic number : read32 value')
         if ((value & 0xFFFF0000) != 0xcafe0000):
             raise Exception("Target not responding correctly, check interface / baud rate...")
+        print('check done')
 
     ##################################################################
     # read32: Read a word from a specified address
