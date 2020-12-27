@@ -1,0 +1,7 @@
+sudo python3 ./peek.py -a 0
+
+sudo python3 ./peek.py -a 0
+
+sudo python3 ./poke.py -a 0 -v 0xdeadface
+
+sudo python3 dump.py -s 128 -o a.txt
