@@ -1,6 +1,6 @@
 ### UART -> AXI Debug Bridge
 
-!!! Thank you ultraembedded !!!
+!!! Thank you ultraembedded https://github.com/ultraembedded !!!
 
 Github:   [http://github.com/ultraembedded/cores](https://github.com/ultraembedded/cores/tree/master/dbg_bridge)
 
